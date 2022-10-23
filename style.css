@@ -1,0 +1,176 @@
+
+/*stile pata usar no rouver no tamanho 170px*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: sans-serif;
+    min-height:100vh;
+    background:#0e1538;
+	 cursor:none;
+}.inner-cursor{
+    position:fixed;
+    left:10px;
+    width: 50px;
+    height: 50px;
+    transform:translate(-50%, -50%);
+    background-color:#fff;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: width 0.5s, height 0.5s;
+}
+.inner-cursor.grow{
+    width:25px;
+    height:25px;
+    transition:width 0.5s, height 0.5s;
+}
+.outer-cursor{
+    position:fixed;
+    left:10px;
+    width: 70px;
+    height: 70px;
+    transform:translate(-50%, -50%);
+    border:solid 1px #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: 0.1s;
+    border-radius: 50%;
+}
+.box{
+    position:relative;
+    width: 100px;
+    height: 100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: rgb(0 0 0 / 0.5);
+    overflow:hidden;
+    border-radius: 8%;
+}
+.box::after{
+    content:'';
+    height: 95px;
+    position:absolute;
+    inset: 3px;
+    background:#0e1538;
+    border-radius: 7px;
+	 animation:cs 4s linear infinite;
+}
+.box::before{
+    content:'';
+    position:absolute;
+    width: 20px;
+    height:140%;
+    background:linear-gradient(#00ccff,#d400d4);
+    animation:animate 4s linear infinite;
+}
+
+.rota{
+    animation: animate 1s cubic-bezier(0, 0, 0.16, 1.1) infinite;	 
+}
+@keyframes animate{
+   to{
+        transform:rotate(360deg);
+    }
+}
+.box h2{
+    position: absolute;
+    color:#fff;
+    font-size: 1em;
+    z-index: 999;
+}
+.es{
+    padding: 2px 20px;
+    margin-top: 209px;
+    background: #823ad9d9;
+    border: none;
+   position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes cs{
+    0%{
+        transform:rotate(0deg);
+        color:black;
+    }
+    20%{
+       transform:rotate(90deg); 
+       color:white;
+ 
+    }
+    40%{
+       transform:rotate(180deg); 
+       color:black;
+    }
+    60%{
+       transform:rotate(270deg); 
+       color:white;
+ 
+    }
+    80%{
+       transform:rotate(360deg); 
+       color:black;
+    }
+   100%{
+        transform:rotate(360deg);
+        color:white; 
+ 
+    }
+}
+
+@keyframes animate{
+    0%{
+        transform:rotate(0deg);
+    }
+   100%{
+        transform:rotate(360deg);
+    }
+}
+#conte{
+	display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
